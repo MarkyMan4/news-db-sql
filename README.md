@@ -1,2 +1,2 @@
 # news-db-sql
-SQL queries and script for news database
+SQL queries and scripts for news database
