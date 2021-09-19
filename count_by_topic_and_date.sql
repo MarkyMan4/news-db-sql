@@ -17,7 +17,6 @@ where
 group by 
 	topic.topic_name, 
 	art.date_published
-order by 
-	article_count desc,
+order by
 	art.date_published, 
 	topic.topic_name;
