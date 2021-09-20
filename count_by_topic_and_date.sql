@@ -1,10 +1,10 @@
 /* 
  * Get article counts by topic and by day
- * TODO: date published is a timestamp, I need to group by date, not by a date time.
  */
 select 
+	1 as id,
 	topic.topic_name,
-	art.date_published,
+	substr(cast(art.date_published as varchar), 1, 10) as date,
 	count(*) as article_count
 from 
 	news_article art
@@ -16,7 +16,7 @@ where
 	art.date_published > '2015-01-01'
 group by 
 	topic.topic_name, 
-	art.date_published
+	substr(cast(art.date_published as varchar), 1, 10)
 order by
-	art.date_published, 
+	substr(cast(art.date_published as varchar), 1, 10),
 	topic.topic_name;
